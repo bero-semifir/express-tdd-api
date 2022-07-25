@@ -7,7 +7,7 @@ const films: Film[] = [
     {
         title: 'Interstellar',
         actors: [
-            { firstname: 'Matthew', lastname: 'McConaughey'},
+            { firstname: 'Matthew', lastname: 'McConaughey' },
         ],
         releaseDate: new Date('2014-11-05'),
         status: "released",
@@ -16,8 +16,13 @@ const films: Film[] = [
 ];
 
 // _ indique qu'on aurait pu mettre un paramètre mais on ne s'en serait pas servit (ici req)
-FilmRouter.get('/', (_: Request, res: Response)=> {
+FilmRouter.get('/', (_: Request, res: Response) => {
     res.json(films);
-});
+})
+    .post('/', (req: Request, res: Response) => {
+        const film = req.body;
+        res.status(201);
+        res.json(film);
+    })
 
 export default FilmRouter;

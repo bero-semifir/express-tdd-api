@@ -1,0 +1,6 @@
+node_modules/
+dist/
+coverage/
+
+# Ne pas inclure le fichier .env car il contient les variables d'environnement sensible
+.env
